@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sudoku</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src='script.js' defer></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+    <div>
+        <h1>Sudoku</h1>
+        <p>Sudoku, por vezes escrito Su Doku é um jogo baseado na colocação lógica de números. O objetivo do jogo é a colocação de números de 1 a 9 em cada uma das células vazias numa grade de 9x9, constituída por 3x3 subgrades chamadas regiões.</p>
+            <button id="destaque1" onclick="hide()">regras</button> 
+            <button  id="destaque2" onclick="escolherDificuldade()">Start</button> 
+    </div>
+    <div id="regras" style="display: none;">
+        <ul id="listaRegras">
+        <li> Cada linha deve conter os números de 1 a 9, sem repetições</li>
+        <li> Os números de 1 a 9 apenas podem estar presentes uma vez por coluna</li>
+        <li> Cada dígito apenas pode estar presente uma vez por grupo (3x3)</li>
+        <li> O valor da soma de cada linha, coluna e grupo é de 45</li>
+        </ul>
+    </div>
+    <div id="dificuldade" style="display: none;">
+    <p id="pDificuldade">Escolha a dificuldade que deseja jogar:</p>
+    <button class="buttonDificuldade" onclick="dificuldade = 'facil';start()">Fácil</button>
+    <button class="buttonDificuldade" onclick="dificuldade = 'medio';start()">Médio</button>
+    <button class="buttonDificuldade" onclick="dificuldade = 'dificil';start()">Difícil</button>
+    </div>
+
+    <div id="jogo">
+        <table id="grade"></table>
+    </div>
+
+    <div id="endGame" style="display: none;">
+        <button id="finaliza" onclick="hideEndGame()">Finalizar jogo</button>
+    </div>
+
+    <h4 onclick="info_autores()">Autor:</h4>
+    <div id="info" style="display: none;">
+        <p>Richard Nícolas Santana Ornelas</p>
+    </div>
+
+
+</body>
+</html>
